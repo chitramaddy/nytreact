@@ -4,7 +4,7 @@ import moment from "moment";
 
 class Saved extends Component {
 	state = {
-		articles =[]
+		articles : []
 	}
 
 	componentDidMount() {
@@ -46,7 +46,7 @@ class Saved extends Component {
 									.articles
 									.map(article => (
 										<li key={article._id} className="list-group-item d-flex justify-content-between align-items-center">
-											<a href={article_url} target="_blank">{article.title} - {moment(article.date).format("Do MMM YYYY hh:mm:ss a")}</a>
+											<a href={article.url} target="_blank">{article.title} - {moment(article.date).format("Do MMM YYYY hh:mm:ss a")}</a>
 											<span className="badge badge-primary badge-pill" onClick={() => this.deleteArticle(article._id)}>Delete Article</span>
 										</li>
 									))}
@@ -60,3 +60,5 @@ class Saved extends Component {
 
 	}
 }
+
+export default Saved;

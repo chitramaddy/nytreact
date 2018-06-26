@@ -1,4 +1,4 @@
-import React, { component } from "react";
+import React, { Component} from "react";
 import API from "../utils/API";
 
 class Home extends Component {
@@ -34,9 +34,9 @@ class Home extends Component {
 	}
 
 	saveArticle = id => {
-		const savedArticle = this.state.articles.find(article => (article_id === id));
+		const savedArticle = this.state.articles.find(article => (article._id === id));
 
-		console.log(savedArtcle);
+		console.log(savedArticle);
 
 		API.articleSave({
 			title: savedArticle.headline.main,
@@ -90,8 +90,8 @@ class Home extends Component {
 						</h2>
 
 						<ul className="list-group list-group-flush">
-							{this.
-								state
+							{this
+								.state
 								.articles
 								.map(article => (
 									<li key={article._id} className="list-group-item d-flex justify-content-between align-items-center">
